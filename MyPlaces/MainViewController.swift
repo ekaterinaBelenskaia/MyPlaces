@@ -24,15 +24,15 @@ class MainViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
         
-        var content = cell.defaultContentConfiguration()
-        content.text = restarauntNames[indexPath.row]
-        content.image = UIImage(named: restarauntNames[indexPath.row])
-        content.imageProperties.cornerRadius = cell.frame.size.height / 2
-        cell.clipsToBounds = true
+//        var content = cell.defaultContentConfiguration()
+        cell.nameLabel.text = restarauntNames[indexPath.row]
+        cell.imageOfLocation.image = UIImage(named: restarauntNames[indexPath.row])
+        cell.imageOfLocation.layer.cornerRadius = cell.imageOfLocation.frame.size.height / 2
+        cell.imageOfLocation.clipsToBounds = true
 
-        cell.contentConfiguration = content
+//        cell.contentConfiguration = content
         
         return cell
     }
