@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		C40677BC28C9DC3000E70222 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40677BB28C9DC3000E70222 /* AppDelegate.swift */; };
 		C40677BE28C9DC3000E70222 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40677BD28C9DC3000E70222 /* SceneDelegate.swift */; };
-		C40677C028C9DC3000E70222 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40677BF28C9DC3000E70222 /* ViewController.swift */; };
 		C40677C328C9DC3000E70222 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40677C128C9DC3000E70222 /* Main.storyboard */; };
 		C40677C528C9DC3200E70222 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C40677C428C9DC3200E70222 /* Assets.xcassets */; };
 		C40677C828C9DC3200E70222 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40677C628C9DC3200E70222 /* LaunchScreen.storyboard */; };
 		C40677D328C9DC3200E70222 /* MyPlacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40677D228C9DC3200E70222 /* MyPlacesTests.swift */; };
 		C40677DD28C9DC3200E70222 /* MyPlacesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40677DC28C9DC3200E70222 /* MyPlacesUITests.swift */; };
 		C40677DF28C9DC3200E70222 /* MyPlacesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40677DE28C9DC3200E70222 /* MyPlacesUITestsLaunchTests.swift */; };
+		C40677EC28C9E24B00E70222 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40677EB28C9E24B00E70222 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 		C40677B828C9DC3000E70222 /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40677BB28C9DC3000E70222 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C40677BD28C9DC3000E70222 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C40677BF28C9DC3000E70222 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C40677C228C9DC3000E70222 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C40677C428C9DC3200E70222 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C40677C728C9DC3200E70222 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		C40677D828C9DC3200E70222 /* MyPlacesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPlacesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40677DC28C9DC3200E70222 /* MyPlacesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlacesUITests.swift; sourceTree = "<group>"; };
 		C40677DE28C9DC3200E70222 /* MyPlacesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlacesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C40677EB28C9E24B00E70222 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				C40677BB28C9DC3000E70222 /* AppDelegate.swift */,
+				C40677EB28C9E24B00E70222 /* MainViewController.swift */,
 				C40677BD28C9DC3000E70222 /* SceneDelegate.swift */,
-				C40677BF28C9DC3000E70222 /* ViewController.swift */,
 				C40677C128C9DC3000E70222 /* Main.storyboard */,
 				C40677C428C9DC3200E70222 /* Assets.xcassets */,
 				C40677C628C9DC3200E70222 /* LaunchScreen.storyboard */,
@@ -258,7 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C40677C028C9DC3000E70222 /* ViewController.swift in Sources */,
+				C40677EC28C9E24B00E70222 /* MainViewController.swift in Sources */,
 				C40677BC28C9DC3000E70222 /* AppDelegate.swift in Sources */,
 				C40677BE28C9DC3000E70222 /* SceneDelegate.swift in Sources */,
 			);
