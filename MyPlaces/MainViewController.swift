@@ -29,8 +29,15 @@ class MainViewController: UITableViewController {
         var content = cell.defaultContentConfiguration()
         content.text = restarauntNames[indexPath.row]
         content.image = UIImage(named: restarauntNames[indexPath.row])
+        content.imageProperties.cornerRadius = cell.frame.size.height / 2
+        cell.clipsToBounds = true
+
         cell.contentConfiguration = content
+        
         return cell
+    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 85
     }
 
     /*
