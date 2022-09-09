@@ -1,15 +1,9 @@
-//
-//  MainViewController.swift
-//  MyPlaces
-//
-//  Created by Ekaterina on 8.09.22.
-//
-
 import UIKit
 
 class MainViewController: UITableViewController {
-
-    let restarauntNames = ["AtoRamen", "AtoSushi", "Fermento", "Manekin", "Piana Wishnia", "The Brick", "Танчао", "Хинкальная"]
+    
+    let places = Place.getPlaces()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,26 +14,25 @@ class MainViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return restarauntNames.count
+        return places.count
+        
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
         
-//        var content = cell.defaultContentConfiguration()
-        cell.nameLabel.text = restarauntNames[indexPath.row]
-        cell.imageOfLocation.image = UIImage(named: restarauntNames[indexPath.row])
+        cell.nameLabel.text = places[indexPath.row].name
+        cell.locationLabel.text = places[indexPath.row].location
+        cell.typeLabel.text = places[indexPath.row].type
+        cell.imageOfLocation.image = UIImage(named: places[indexPath.row].image)
+        
         cell.imageOfLocation.layer.cornerRadius = cell.imageOfLocation.frame.size.height / 2
         cell.imageOfLocation.clipsToBounds = true
 
-//        cell.contentConfiguration = content
         
         return cell
     }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
-    }
-
+ 
     /*
     // MARK: - Navigation
 
@@ -49,5 +42,7 @@ class MainViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func cancelAdding (_ segue: UIStoryboardSegue) {
+        
+    }
 }

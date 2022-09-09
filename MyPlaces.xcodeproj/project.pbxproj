@@ -17,6 +17,7 @@
 		C40677DF28C9DC3200E70222 /* MyPlacesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40677DE28C9DC3200E70222 /* MyPlacesUITestsLaunchTests.swift */; };
 		C40677EC28C9E24B00E70222 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40677EB28C9E24B00E70222 /* MainViewController.swift */; };
 		C40677EE28CA371E00E70222 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40677ED28CA371E00E70222 /* CustomTableViewCell.swift */; };
+		C40677F028CB381200E70222 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40677EF28CB381200E70222 /* PlaceModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		C40677DE28C9DC3200E70222 /* MyPlacesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlacesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C40677EB28C9E24B00E70222 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C40677ED28CA371E00E70222 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		C40677EF28CB381200E70222 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				C40677BB28C9DC3000E70222 /* AppDelegate.swift */,
 				C40677ED28CA371E00E70222 /* CustomTableViewCell.swift */,
 				C40677EB28C9E24B00E70222 /* MainViewController.swift */,
+				C40677EF28CB381200E70222 /* PlaceModel.swift */,
 				C40677BD28C9DC3000E70222 /* SceneDelegate.swift */,
 				C40677C128C9DC3000E70222 /* Main.storyboard */,
 				C40677C428C9DC3200E70222 /* Assets.xcassets */,
@@ -263,6 +266,7 @@
 			files = (
 				C40677EC28C9E24B00E70222 /* MainViewController.swift in Sources */,
 				C40677BC28C9DC3000E70222 /* AppDelegate.swift in Sources */,
+				C40677F028CB381200E70222 /* PlaceModel.swift in Sources */,
 				C40677EE28CA371E00E70222 /* CustomTableViewCell.swift in Sources */,
 				C40677BE28C9DC3000E70222 /* SceneDelegate.swift in Sources */,
 			);
