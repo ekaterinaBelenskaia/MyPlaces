@@ -1,24 +1,43 @@
-import Foundation
+import RealmSwift
+import SwiftUI
+import UIKit
 
-struct Place {
-    var name: String
-    var location: String
-    var type: String
-    var image: String
+class Place: Object {
+    @objc dynamic var name = ""
+    @objc dynamic var location: String?
+    @objc dynamic var type: String?
+    @objc dynamic var imageData: Data?
     
-   static let restarauntNames = ["AtoRamen", "AtoSushi", "Fermento", "Manekin", "Piana Wishnia", "The Brick", "Танчао", "Хинкальная"]
-    
-    static func getPlaces() -> [Place] {
-        var places = [Place]()
-
-        for place in restarauntNames {
-            places.append(Place(name: place, location: cityByPlace(place: place), type: "Restaurant", image: place))
-        }
-        
-        return places
-        
+    convenience init(name: String, location: String?, type: String?, imageData: Data?) {
+        self.init()
+        self.name = name
+        self.location = location
+        self.type = type
+        self.imageData = imageData
     }
-    static func cityByPlace(place: String) -> String {
+//
+//   let restarauntNames = ["AtoRamen", "AtoSushi", "Fermento", "Manekin", "Piana Wishnia", "The Brick", "Танчао", "Хинкальная"]
+//
+//     func savePlaces() {
+//
+//        for place in restarauntNames {
+//
+//            let image = UIImage(named: place)
+//            guard let imageData = image?.pngData() else { return }
+//
+//            let newPlace = Place()
+//
+//            newPlace.name = place
+//            newPlace.location = cityByPlace(place: place)
+//            newPlace.type = "Restaurant"
+//            newPlace.imageData = imageData
+//
+//            StorageManager.saveObject(newPlace)
+//        }
+//
+//
+//    }
+     func cityByPlace(place: String) -> String {
         var ret: String = ""
         if (place == "Танчао") {
             ret = "Brest"

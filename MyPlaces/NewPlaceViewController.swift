@@ -8,11 +8,24 @@
 import UIKit
 
 class NewPlaceViewController: UITableViewController {
+    
+    var currentPlace: Place?
+    var imageIsChanged = false
 
-    @IBOutlet weak var imageOfPlace: UIImageView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+
+    @IBOutlet weak var placeName: UITextField!
+    @IBOutlet weak var placeLocation: UITextField!
+    @IBOutlet weak var placeType: UITextField!
+    
+    @IBOutlet weak var placeImage: UIImageView!
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
+        saveButton.isEnabled = false
+        placeName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        setupEditingScreen()
     }
     // MARK: Text field delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -47,6 +60,60 @@ class NewPlaceViewController: UITableViewController {
             view.endEditing(true)
         }
     }
+    func savePlace() {
+        
+        var image: UIImage?
+        if imageIsChanged {
+            image = placeImage.image
+        } else {
+            image = UIImage(named: "imagePlaceholder")
+        }
+        
+        let imageData = image?.pngData()
+        let newPlace = Place(name: placeName.text!,
+                             location: placeLocation.text,
+                             type: placeType.text,
+                             imageData: imageData)
+                
+        if currentPlace != nil {
+            try! realm.write {
+            currentPlace?.name = newPlace.name
+            currentPlace?.location = newPlace.location
+            currentPlace?.type = newPlace.type
+            currentPlace?.imageData = newPlace.imageData
+        }
+        } else {
+            StorageManager.saveObject(newPlace)
+
+        }
+    }
+    private func setupEditingScreen () {
+        if currentPlace != nil {
+            
+            setupNavigationBar()
+            imageIsChanged = true
+            
+            guard let data = currentPlace?.imageData, let image = UIImage(data: data) else { return }
+            placeImage.image = image 
+            placeImage.contentMode = .scaleAspectFill
+            placeName.text = currentPlace?.name
+            placeLocation.text = currentPlace?.location
+            placeType.text = currentPlace?.type
+        }
+    }
+    
+    private func setupNavigationBar() {
+        if let topItem = navigationController?.navigationBar.topItem {
+            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        }
+        navigationItem.leftBarButtonItem = nil
+        title = currentPlace?.name
+        saveButton.isEnabled = true
+    }
+    
+    @IBAction func cancelAction(_ sender: Any) {
+        dismiss(animated: true)
+    }
 }
 
 // MARK: Text field delegate
@@ -57,6 +124,13 @@ class NewPlaceViewController: UITableViewController {
         func textFieldShouldReturn(_ textField: UITextField) -> Bool {
             textField.resignFirstResponder()
             return true
+        }
+        @objc private func textFieldChanged() {
+            if placeName.text?.isEmpty == false {
+                saveButton.isEnabled = true
+            } else {
+                saveButton.isEnabled = false
+            }
         }
     }
 // MARK: Work with image
@@ -75,9 +149,11 @@ extension NewPlaceViewController: UIImagePickerControllerDelegate, UINavigationC
     }
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        imageOfPlace.image = info[.editedImage] as? UIImage
-        imageOfPlace.contentMode = .scaleAspectFill
-        imageOfPlace.clipsToBounds = true
+        placeImage.image = info[.editedImage] as? UIImage
+        placeImage.contentMode = .scaleAspectFill
+        placeImage.clipsToBounds = true
+        
+        imageIsChanged = true
         dismiss(animated: true)
     }
 }
