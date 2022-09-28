@@ -14,7 +14,7 @@
             <objects>
                 <tableViewController id="rHq-fO-Zwk" customClass="NewPlaceViewController" customModule="MyPlaces" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="eiH-z5-fRt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
@@ -153,7 +153,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="opk-DZ-aQB" customClass="RatingControl" customModule="MyPlaces" customModuleProvider="target">
+                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="252" placeholderIntrinsicHeight="44" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="opk-DZ-aQB" customClass="RatingControl" customModule="MyPlaces" customModuleProvider="target">
                                                     <rect key="frame" x="81" y="48" width="252" height="44"/>
                                                 </stackView>
                                             </subviews>
@@ -188,13 +188,14 @@
                         <outlet property="placeLocation" destination="w69-pV-RwY" id="v4f-6H-mEU"/>
                         <outlet property="placeName" destination="kM1-EN-A4t" id="twx-9I-PiF"/>
                         <outlet property="placeType" destination="70X-rA-mCA" id="FUM-ty-X7Z"/>
+                        <outlet property="ratingControl" destination="opk-DZ-aQB" id="n0V-uo-w0u"/>
                         <outlet property="saveButton" destination="xvE-I1-IvA" id="JxV-te-quc"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EPR-XL-TLH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="vo0-Ep-5eG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="829" y="496"/>
+            <point key="canvasLocation" x="770" y="388"/>
         </scene>
         <!--My Places-->
         <scene sceneID="I8Z-6F-bi4">
@@ -216,7 +217,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LTG-pF-oGF">
-                                <rect key="frame" x="0.0" y="120" width="414" height="742"/>
+                                <rect key="frame" x="0.0" y="120" width="414" height="776"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="87" id="Whn-vD-fa2" customClass="CustomTableViewCell" customModule="MyPlaces" customModuleProvider="target">
@@ -290,7 +291,7 @@
                             <constraint firstItem="yCR-A7-MYm" firstAttribute="trailing" secondItem="gh0-qQ-mRM" secondAttribute="trailing" id="RqJ-N2-awq"/>
                             <constraint firstItem="gh0-qQ-mRM" firstAttribute="top" secondItem="yCR-A7-MYm" secondAttribute="top" id="UFj-8I-UkM"/>
                             <constraint firstItem="LTG-pF-oGF" firstAttribute="trailing" secondItem="yCR-A7-MYm" secondAttribute="trailing" id="a5M-0M-t5W"/>
-                            <constraint firstItem="LTG-pF-oGF" firstAttribute="bottom" secondItem="yCR-A7-MYm" secondAttribute="bottom" id="e36-c7-U75"/>
+                            <constraint firstItem="LTG-pF-oGF" firstAttribute="bottom" secondItem="i0e-DU-K05" secondAttribute="bottom" id="e36-c7-U75"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Places" largeTitleDisplayMode="never" id="a57-qm-nvM">
@@ -350,11 +351,16 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xQy-BN-9x3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="829" y="-317"/>
+            <point key="canvasLocation" x="770" y="-289"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="opk-DZ-aQB">
+            <size key="intrinsicContentSize" width="252" height="44"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="7gO-eJ-cqe"/>
+        <segue reference="BCu-eC-voZ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AZ" width="25" height="24"/>

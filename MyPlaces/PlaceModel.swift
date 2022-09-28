@@ -8,13 +8,15 @@ class Place: Object {
     @objc dynamic var type: String?
     @objc dynamic var imageData: Data?
     @objc dynamic var date = Date()
+    @objc dynamic var rating = 0.0
     
-    convenience init(name: String, location: String?, type: String?, imageData: Data?) {
+    convenience init(name: String, location: String?, type: String?, imageData: Data?, rating: Double) {
         self.init()
         self.name = name
         self.location = location
         self.type = type
         self.imageData = imageData
+        self.rating = rating
     }
 //
 //   let restarauntNames = ["AtoRamen", "AtoSushi", "Fermento", "Manekin", "Piana Wishnia", "The Brick", "Танчао", "Хинкальная"]
